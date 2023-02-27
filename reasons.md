@@ -6,6 +6,6 @@ My favorite thing to teach is kubernetes and helm. - Instructor Eric
 
 ---
 
-*put student responses below here*
+I want to learn CI/CD, Kubernetes, and Jenkins for the DevOps portion of MLOps.
 
 ---
