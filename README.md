@@ -1,2 +1,2 @@
 # welcome-students
-use this directory to practice git commands and merge your username
+use this git repo to practice git commands and merge your username
