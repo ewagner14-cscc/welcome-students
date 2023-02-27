@@ -17,6 +17,6 @@ First we are going to clone this repo, and create branch we can push up to GitHu
   
   Markdown files are special fiels that can produce HTML from their formatting. Very useful in creating documentation in software repositories. We are going to edit the reasons.md file with our reasons for taking this class, save the changes, and push up our branch to github.
   
-  [markdown reference cheatsheet](https://www.markdownguide.org/cheat-sheet/)
+  [markdown reference cheatsheet](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/quickstart-for-writing-on-github)
   
   1) In your VM, use either vim, nano, emacs, or the text Editor to edit the reasons.md file. If you add a picture, add it to the static/ folder in this repo.
