@@ -6,6 +6,5 @@ My favorite thing to teach is kubernetes and helm. - Instructor Eric
 
 ---
 
-*put student responses below here*
-
+I hope to learn more about container platform, helm, and CI/CD dev tools used to deploy applications
 ---
