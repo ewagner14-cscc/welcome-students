@@ -34,5 +34,3 @@ In the terminal run the following commands
   git commit -m "my commit" # to commit your changes
   git push -u origin <username> # to push your branch to github
   ```
-
-I want to learn how to use software containers
