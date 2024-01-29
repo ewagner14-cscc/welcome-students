@@ -1,0 +1,54 @@
+
+classes: {
+    sre: {
+        style: {
+            stroke-width: 3
+            stroke: red
+            animated: true
+        }
+    }
+    git: {
+        style: {
+            stroke-width: 5
+            stroke: green
+            animated: true
+        }
+    }
+}
+git process: {
+    shape: sequence_diagram
+    
+    student: student\n(CSCC VM) {
+        icon: https://icons.terrastruct.com/essentials%2F365-user.svg
+        shape: image
+    }
+    
+    git: GitHub lab repo {
+        icon: https://icons.terrastruct.com/dev%2Fgithub.svg
+        shape: image
+    }
+    prof: Eric\n(ewagner14-cscc){
+        icon: https://icons.terrastruct.com/essentials%2F365-user.svg
+        shape: image
+    }
+    
+    Student <- git: student pulls down repo\n(ex: git clone) {class: git}
+    student -> student: creates a branch of git repo\n(ex: git checkout -b) {class: git}
+    student -> student: updates branch with lab homework\n(ex: git add, git commit) {class: git}
+    student -> git: pushes updated branch to github\n(ex: git push orgin <branchname>) {class: git}
+    pr: Pull Request \#1{
+    student -> git: creates a pull request in GitHub UI
+    student -> git: student adds @ewagner14-cscc in pull request
+    prof -> git: Eric reviews PR {class: sre}
+    prof -> prof: Updates PR with answers questions {class: sre}
+    prof -> git: Approves,\nrequests changes,\nor comments on the code directly. {class: sre}
+    }
+    student <- git: student gets feedback\n(ex @student)
+    student -> student: student continues to work on branch, makes fixes {class: git}
+    pr2: Pull Request \#2{
+    student -> git: pushes updates/ fixes to github,\ncreates another PR in GitHub@ewagner14-cscc
+    prof -> git: Eric reviews PR, approves merge {class: sre}
+    }
+    student -> git: student merges PR into main branch
+
+}
