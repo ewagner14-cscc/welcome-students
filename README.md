@@ -20,3 +20,7 @@ Crucial to getting lab homework done is pick up a few git commands. Use the link
 Markdown is nice to know too, but is very easy to understand. 
 
 ![k8s](./static/k8s-helm.png)
+
+# Lego activity
+
+[Click here for the lego activity](lego/README.md)
