@@ -1,3 +1,11 @@
+- [How to use git with lab homework](#how-to-use-git-with-lab-homework)
+  - [Setup CSCC VM](#setup-cscc-vm)
+  - [Create a GitHub SSH key](#create-a-github-ssh-key)
+  - [Clone the git repo and create a working branch](#clone-the-git-repo-and-create-a-working-branch)
+  - [Edits are made to the working branch](#edits-are-made-to-the-working-branch)
+  - [Push the code up and create a Pull Request](#push-the-code-up-and-create-a-pull-request)
+- [Here is the process in a diagram](#here-is-the-process-in-a-diagram)
+
 # How to use git with lab homework
 
 ## Setup CSCC VM
@@ -15,6 +23,18 @@ Run these commands in the CSCC VM, replacing with your name and CSCC email:
 ```bash
 git config --global user.name "Your Name"
 git config --global user.email "your.email@example.com"
+```
+
+Lastly, I like to work in a directory just off of my home directory. That way my files are just a few ```cd``` commands away.
+
+I would suggest creating a class directory like ```mkdir wiit7501``` and creating a few sub-directories for labs, testing, and class exersizes. When a new lab starts, head into your labs directory, and execute your ```git clone``` command.
+
+```bash
+wiit7500
+├── exersizes
+├── labs
+├── scripts
+└── temp
 ```
 
 
@@ -57,14 +77,42 @@ We follow these steps to get a local working copy of the code for the labs.
 
 ## Edits are made to the working branch
 
-Begin working on your solutions in the new branch. List your available branches with: ``` git branch -v```
+This is where you really begin to work. Use tools, like text editor, vim, nano, or Visual Studio Code to edit yours files. If you don't know what to use, start with text editor. It is graphical and you can open multiple windows.
+
+![text editor](./static/texteditor.png)
+
+Begin working on your solutions in the new branch. List your available branches at the command line with: ``` git branch -v```
 
 You can switch back and forth between branches. Use the command ```git checkout <branchname>```
 
 With work either complete or you need some feedback, now you want to check the working branch code back into GitHub for collaboration.
 
-To get the changes
+To get the changes tracked in git, use the command ```git add .```. This will add all changes from your current path, to the current git branch.
 
-## Push the code up
+Next, you commit the changes with ```git commit -m "Your commit message"```. This creates a trackable git commit! exciting! 🎉
 
- to ask for a pull request.
+## Push the code up and create a Pull Request
+
+Now we get the code up to github with a push command:
+
+```bash
+git push -u origin <new_branch_name>
+```
+
+The new branch should show up in GitHub
+
+![branches](./static/branches.png)
+
+To ask for a pull request, or collaborate with Eric on the lab, go to the repository on GitHub.
+
+You should see a prompt to compare and create a pull request for your recently pushed branch.
+
+![pull request](./static/pr.png)
+
+Provide a title and description for your pull request. Make sure to @ewagner14-cscc and submit the PR.
+
+![pull request submit](./static/pr2.png)
+
+# Here is the process in a diagram
+
+![git diagram](./static/index.svg)
