@@ -14,11 +14,7 @@ There are a few pre-requisities for setting the CSCC VM. Lets get used to using 
 
 ![find the terminal program](./static/cscc_term.png)
 
-First we need to create an .ssh directory in home directory and give it the correct permissions. Run the command: ```mkdir ~/.ssh && chmod 700 ~/.ssh```
-
-Next, we setup our git username and email global settings.
-
-Run these commands in the CSCC VM, replacing with your name and CSCC email:
+Let's setup our git username and email global settings. Run these commands in the CSCC VM, replacing with your name and CSCC email:
 
 ```bash
 git config --global user.name "Your Name"
@@ -52,9 +48,15 @@ The basic steps are:
           1. accept all the defaults by clicking enter 3-4 times (save location, no password, etc)
        2. ```cat /home/CSCC/<student_user_name>/.ssh/id_ed25519.pub```
        3. Copy the cat command output, and paste into github. [this link](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?platform=linux)
-    5. Make sure to add ssh key to your agent. [This link again](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
-       1. ```eval "$(ssh-agent -s)"```
-       2. ```ssh-add ~/.ssh/id_ed25519```
+    5. Here you have options
+       1. Option one, add a ssh config file to your ```.ssh``` directory
+          1. You can create one your own, or copy this one I included in the git repo.
+          2. From this git repo, run ```cp git_help/ssh_config ~/.ssh/config && chmod 600 ~/.ssh/config```
+       2. Or you can add the ssh key to your agent. [This link again](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+          1. ```eval "$(ssh-agent -s)"```
+          2. ```ssh-add ~/.ssh/id_ed25519```
+    6. Test your access with ```ssh -T git@github.com```
+       1. You should get something like ```Hi ewagner14-cscc! You've successfully authenticated, but GitHub does not provide shell access.```
 
 ## Clone the git repo and create a working branch
 
