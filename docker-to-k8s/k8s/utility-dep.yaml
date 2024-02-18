@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: utility
+  labels: 
+    app: adminer
+    app: netshoot
+spec:
+  replicas: 1  # Number of Adminer pods you want 
+  selector:
+    matchLabels:
+      app: adminer
+  template:
+    metadata:
+      labels:
+        app: adminer
+    spec:
+      containers:
+        - name: adminer
+          image: adminer
+          ports:
+            - containerPort: 8080
+        # - name: netshoot
+        #   image: nicolaka/netshoot
+        #   command: ["sleep", "3600"]
