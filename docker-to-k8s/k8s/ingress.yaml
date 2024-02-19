@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app-ingress  
+spec:
+  rules:   
+  - host: k8s.laptop
+    http:
+      paths:
+      - path: /adminer 
+        pathType: Prefix
+        backend:
+          service:
+            name: adminer-svc
+            port:
+              number: 8080 

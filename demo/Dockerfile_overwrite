@@ -1,0 +1,4 @@
+FROM test:v1
+
+#Change here. Overwrite the cat_script.sh
+COPY overwrite_cat.sh /opt/cat_script.sh
