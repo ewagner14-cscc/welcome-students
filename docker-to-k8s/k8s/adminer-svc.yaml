@@ -3,7 +3,9 @@ kind: Service
 metadata:
   name: adminer-svc
 spec:
+  type: NodePort
   ports:
     - port: 8080
+      nodePort: 30080
   selector:
     app: adminer
