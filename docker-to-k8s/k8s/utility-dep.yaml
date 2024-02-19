@@ -22,4 +22,4 @@ spec:
             - containerPort: 8080
         # - name: netshoot
         #   image: nicolaka/netshoot
-        #   command: ["sleep", "3600"]
+        #   command: ["sleep", "3600"]kaf ut
