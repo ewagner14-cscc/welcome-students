@@ -24,3 +24,7 @@ Markdown is nice to know too, but is very easy to understand.
 # Lego activity
 
 [Click here for the lego activity](lego/README.md)
+
+# Docker-to-k8s activity
+
+[Click here for the docker-to-k8s activity](docker-to-k8s/README.md)
