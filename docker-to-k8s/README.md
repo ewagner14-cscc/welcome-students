@@ -1,4 +1,4 @@
-- [3 differnet ways of doing the same thing](#3-differnet-ways-of-doing-the-same-thing)
+- [3 different ways of doing the same thing](#3-different-ways-of-doing-the-same-thing)
   - [Containers only](#containers-only)
   - [Docker compose](#docker-compose)
   - [Kubernetes](#kubernetes)
@@ -8,9 +8,11 @@
     - [Comparison diagram of docker vs kubernetes](#comparison-diagram-of-docker-vs-kubernetes)
 
 
-# 3 differnet ways of doing the same thing
+# 3 different ways of doing the same thing
 
 *This is just an example/ not homework*
+
+Docker can do what Docker Composer can do what Kubernetes can do, so why learn all 3?
 
 In learning about containers, a few questions come to mind about what do you need to know about containers if your goal is to utilize kubernetes. Or if you're a developer, why do you need to learn about kubernetes at all?
 
