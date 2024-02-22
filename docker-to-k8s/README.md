@@ -138,11 +138,11 @@ These components are very powerful when broken apart and managed seperately, all
 # need to expose the lb in k3d
 k3d cluster create derp -p "8081:80@loadbalancer" -a 2
 
-# optional: add laptop to /etc/hosts
-# 127.0.0.1       k8s.laptop
+#open localhost:8081/adminer
 ```
+[k3d ingress documentation(above)](https://k3d.io/v5.4.6/usage/exposing_services/)
 
-[Good link on k3d ingress](https://rob-mengert.medium.com/understanding-k3d-ingress-b94697638f3b)
+[Deeper dive on k3d ingress](https://rob-mengert.medium.com/understanding-k3d-ingress-b94697638f3b)
 
 ### Comparison diagram of docker vs kubernetes
 
