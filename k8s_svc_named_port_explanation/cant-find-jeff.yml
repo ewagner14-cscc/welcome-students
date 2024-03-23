@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cant-find-jeff-svc
+spec:
+  selector:
+    conference: present
+    tshirt: red
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: jeff
