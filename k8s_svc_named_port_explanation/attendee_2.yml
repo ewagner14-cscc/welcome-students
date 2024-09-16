@@ -1,0 +1,34 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: notjeff-pod2
+  labels:
+    conference: present
+    tshirt : red 
+    handed : right
+    hair: black
+    fname:  natasha
+spec:
+  containers:
+  - name: pod-nginx
+    image: nginx:stable-alpine
+    ports:
+    - containerPort: 80
+      name: natasha
+    volumeMounts:
+    - name: html-content
+      mountPath: /usr/share/nginx/html
+  - name: pod-content
+    image: alpine:latest
+    volumeMounts:
+    - name: html-content
+      mountPath: /html
+    command: ["/bin/sh", "-c"]
+    args:
+      - while true; do
+          echo "NotJeff2 current time<br/>" $(date)"<br/>" >> /html/index.html;
+          sleep 5;
+        done
+  volumes:
+  - name: html-content
+    emptyDir: {}

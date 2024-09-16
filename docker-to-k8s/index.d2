@@ -1,0 +1,77 @@
+info: |md
+- pvc = persistent volume claim
+- pv = persistent volume
+|
+containers: docker and docker compose {
+    db1: mariadb latest {
+        icon: https://icons.terrastruct.com/essentials%2F117-database.svg
+        shape: image
+    }
+    db2: mariadb 10{
+        icon: https://icons.terrastruct.com/essentials%2F117-database.svg
+        shape: image
+    }
+    adminer: {
+        icon: https://icons.terrastruct.com/tech%2Fbrowser-2.svg
+        shape: image
+    }
+    adminer -> db*
+}
+
+k8s: kubernetes {
+    sts1: mariadb latest stateful set {
+        icon: ../static/sts.png
+        shape: image
+    }
+    sts2: mariadb 10 stateful set {
+        icon: ../static/sts.png
+        shape: image
+    }
+    dep: adminer deployment {
+        icon: ../static/deploy.png
+        shape: image
+    }
+    svc1: adminer service {
+        icon: ../static/svc.png
+        shape: image
+    }
+    svc2: mariadb latest service {
+        icon: ../static/svc.png
+        shape: image
+    }
+    svc3: mariadb 10 service {
+        icon: ../static/svc.png
+        shape: image
+    }
+    ingress: adminer ingress {
+        icon: ../static/ingress.png
+        shape: image
+    }
+    pv1: mariadb latest pv {
+        icon: ../static/pv.png
+        shape: image
+    }
+    pv2: mariadb 10 pv {
+        icon: ../static/pv.png
+        shape: image
+    }
+    pvc1: mariadb latest pvc {
+        icon: ../static/pvc.png
+        shape: image
+    }
+    pvc2: mariadb 10 pvc {
+        icon: ../static/pvc.png
+        shape: image
+    }
+    ingress -> svc1 -> dep
+    dep -> svc2 -> sts1
+    dep -> svc3 -> sts2
+    sts1 -> pvc1 -> pv1
+    sts2 -> pvc2 -> pv2
+}
+user: Users {
+    icon: https://icons.terrastruct.com/essentials%2F359-users.svg
+    shape: image
+}
+User -> containers.adminer
+User -> k8s.ingress

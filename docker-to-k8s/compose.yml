@@ -1,0 +1,22 @@
+version: '3.7'  # Adjust Compose version as needed
+
+services:
+  db1:
+    image: mariadb:latest
+    environment:
+      MARIADB_ROOT_PASSWORD: secret
+
+  db2:
+    image: mariadb:10
+    environment:
+      MARIADB_ROOT_PASSWORD: secret
+  
+  # netshoot:
+  #   image: nicolaka/netshoot
+  #   command: ["sleep", "3600"]
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
