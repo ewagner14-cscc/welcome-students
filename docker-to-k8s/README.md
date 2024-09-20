@@ -88,7 +88,7 @@ Our dev can do reuse the same instructions from before: Go to [localhost:8080](h
 
 ## Kubernetes
 
-Now kubernetes, and why use it in locally if docker compsoe works so well? Great question.
+Now kubernetes, and why use it in locally if docker compose works so well? Great question.
 
 There are a few reasons but lets concentrate on 2 that have to do with kubernetes being able to run the same everywhere.
 

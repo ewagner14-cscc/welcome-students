@@ -2,10 +2,11 @@
 - [Docker fix](#docker-fix)
 - [installing DNF](#installing-dnf)
 - [Installing EPEL sources](#installing-epel-sources)
-- [install VS code](#install-vs-code)
-  - [VS Code extentions](#vs-code-extentions)
-- [install zsh and oh-my-zsh](#install-zsh-and-oh-my-zsh)
+- [No longer installing VS code](#no-longer-installing-vs-code)
+- [UNTESTED (9/19/2024) installing zsh and oh-my-zsh](#untested-9192024-installing-zsh-and-oh-my-zsh)
   - [my copy of zshrc in repo](#my-copy-of-zshrc-in-repo)
+- [Archived instructions](#archived-instructions)
+  - [VS Code extentions](#vs-code-extentions)
 
 
 # VM prep
@@ -40,36 +41,24 @@ Gives access to more libs in dnf and yum
 
 ```sudo dnf install epel-release```
 
-# install VS code
+# No longer installing VS code
 
-VS Code is my IDE of choice (integrated development environment). If you want to give it a shot in the VM, install using the below. [I got the instructions here](https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions)
+Because the VMs are using CentOS 7.9, which is out of support, a lot of install commands that rely on package managers will not work. 
 
-```bash
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
-dnf check-update
-sudo dnf install code
-```
+For this class (Autumn 2024), lets concentrate on using tools available natively in the VM. We have some really good ones.
 
-VS code is now in the applications menu
+- Integrated Development Environment - use IntelliJ
+  - Terminal included
+  - git integration (GUI for git push, pull, branch, etc)
+  - plugins available
+- Command line tools
+  - We tested the install of all the needed libs for the course, they worked great (tested 9/19/2024)
+  - git, kubectl, minikube, helm, etc all tested well
+  - VIM and the Edit program are also available on the VM
 
-![vs code](./static/code.png)
+# UNTESTED (9/19/2024) installing zsh and oh-my-zsh
 
-## VS Code extentions
-
-I would recommend a few extensions if you choose to go with VS Code
-
-![ext](./static/ext.png)
-
-- docker
-- indent-rainbow-blocks (makes things so much more readable)
-- kubernetes
-- markdown all-in-one 
-- yaml
-
-# install zsh and oh-my-zsh
-
-**THIS IS ADVANCED** You could break your VM here, and it may need a reset.
+**THIS IS ADVANCED** You could break your VM here, and it may need a reset. 
 
 I like zsh instead of bash for my shell. To install that and to get it running I had to tweak a few things.
 
@@ -108,3 +97,32 @@ To play with your oh-my-zsh setup, [use this link to get started](https://github
 I included a copy of my zsh setup. Ill try to keep it updated.
 
 In there is an alias command to put my CSCC pw in my clipboard. To get it to work, take the cscc-wp.txt file in this repo, copy it to your home dir, chmod to only read/write to your user (```chmod 600 cscc-pw.txt```), and install the xsel command (```sudo dnf install xsel```). I find it useful to have my CSCC pw in my clipboard in the CSCC VM environment, so that is why I did this work around.
+
+# Archived instructions
+
+VS Code is my IDE of choice (integrated development environment). If you want to give it a shot in the VM, install using the below. [I got the instructions here](https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions)
+
+```bash
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+dnf check-update
+sudo dnf install code
+```
+
+VS code is now in the applications menu
+
+![vs code](./static/code.png)
+
+## VS Code extentions
+
+I would recommend a few extensions if you choose to go with VS Code
+
+![ext](./static/ext.png)
+
+- docker
+- indent-rainbow-blocks (makes things so much more readable)
+- kubernetes
+- markdown all-in-one 
+- yaml
+
+
