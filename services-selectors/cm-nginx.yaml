@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-homepages
+data:
+  cm1: |
+    <html>
+    <head>
+      <title>Welcome to NGINX pod 1!</title>
+    </head>
+    <body>
+      <h1>Hello from NGINX Pod 1!</h1>
+      <p>This is the default home page for pod 1</p>
+    </body>
+    </html>
+  cm2: |
+    <html>
+    <head>
+      <title>Welcome to NGINX pod 2!</title>
+    </head>
+    <body>
+      <h1>Hello from NGINX Pod 2!</h1>
+      <p>This is the default home page for pod 2</p>
+    </body>
+    </html>
+  cm3: |
+    <html>
+    <head>
+      <title>Welcome to NGINX pod 3!</title>
+    </head>
+    <body>
+      <h1>Hello from NGINX Pod 3!</h1>
+      <p>This is the default home page for pod 3</p>
+    </body>
+    </html>
