@@ -1,1 +1,5 @@
+# grades / student PII — keep local only, never publish
 students/
+
+# macOS
+.DS_Store

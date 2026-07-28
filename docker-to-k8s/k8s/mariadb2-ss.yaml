@@ -4,7 +4,7 @@ metadata:
   name: mariadb-10   # Example for db1
 spec:
   serviceName: mariadb-latest-service 
-  replicas: 1  # Single replica to start
+  replicas: 5  # Single replica to start
   selector:
     matchLabels: 
       app: mariadb-10
